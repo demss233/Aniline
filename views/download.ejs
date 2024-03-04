@@ -70,19 +70,19 @@
     const btn3 = document.querySelector(".detail_1920x1080 button");
     const initialise = (data) => {
       btn0.addEventListener("click", () => {
-        window.open(data["640x360"]);
+        window.location.href = data["640x360"];
       });
 
       btn1.addEventListener("click", () => {
-        window.open(data["854x480"]);
+        window.location.href = data["854x480"];
       });
 
       btn2.addEventListener("click", () => {
-        window.open(data["1280x720"]);
+        window.location.href = data["1280x720"];
       });
 
       btn3.addEventListener("click", () => {
-        window.open(data["1920x1080"]);
+        window.location.href = data["1920x1080"];
       });
     };
   </script>
