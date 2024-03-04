@@ -61,6 +61,7 @@
         return response.json();
       })
       .then((data) => {
+        console.log(data);
         initialise(data.results);
       });
 
