@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aniline</title>
+    <link rel="stylesheet" href="/home.css" />
+    <link rel="stylesheet" href="/media_queries/home_mq.css" />
+    <link rel="stylesheet" href="/init.css" />
+    <link rel="shortcut icon" href="https://www.favicon.cc/logo3d/904831.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" id="top">
+        <div class="navbar-brand">
+          <img
+            width="48"
+            height="48"
+            src="https://img.icons8.com/fluency/48/000000/a.png"
+            alt="a"
+          />
+          <h1>Aniline</h1>
+        </div>
+        <div class="navbar-right">
+          <a href="#about_">About</a>
+          <button class="binge">Github</button>
+        </div>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="hero__content">
+        <h1>Aniline</h1>
+        <p>
+          A simple and no-BS app for watching and downloading anime. <br />
+          Totally free and open source.
+        </p>
+        <div class="hero__buttons">
+          <button class="get-started" onclick="window.location.href = '#search_'">Get Started</button>
+          <button class="github">Open on Github &rarr;</button>
+        </div>
+      </div>
+      <div class="hero__image">
+        <img src="/hero__image.png" alt="" />
+      </div>
+    </div>
+
+    <div class="mouse"></div>
+
+    <div class="about" id="about_">
+      <h1>About</h1>
+      <p>
+        Created this website as a personal project, borne out of a desire to
+        explore and experiment. Leveraging the AnimeDEX API developed by Shreyas
+        (available at https://github.com/TechShreyash), I crafted this platform
+        using a combination of HTML, CSS, JavaScript, and Express. The design
+        ethos draws inspiration from a standardized color palette, predominantly
+        featuring shades of black and purple
+      </p>
+    </div>
+
+    <div class="search" id="search_">
+      <h1>Get Started</h1>
+      <form action="/" method="POST">
+      <div class="form-control">
+        <input
+          type="text"
+          name="anime"
+          placeholder="Search for an anime! for eg: naruto"
+          class="anime"
+        />
+        <button class="look" onclick="window.location.href = '/anime'">Search</button>
+      </div>
+    </form>
+    </div>
+
+    <div class="footer">
+      <p>Made by Shiv 👋</p>
+      <p onclick="window.location.href = '#top'"">Back to top &uarr;</p>
+    </div>
+
+  <script src="/js/home.js"></script>
+  <script src="/js/hamburger.js"></script>
+  </body>
+</html>

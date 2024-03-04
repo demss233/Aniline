@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download | Aniline</title>
+    <link rel="stylesheet" href="/init.css" />
+    <link rel="stylesheet" href="/download.css" />
+    <link rel="stylesheet" href="/media_queries/download.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" id="top">
+        <div class="navbar-brand" onclick="window.location.href = '/'">
+          <img
+            width="48"
+            height="48"
+            src="https://img.icons8.com/fluency/48/000000/a.png"
+            alt="a"
+          />
+          <h1>Aniline</h1>
+        </div>
+
+        <div class="navbar-right">
+          <a href="/#about_">About</a>
+          <button class="binge">Github</button>
+        </div>
+      </nav>
+    </header>
+
+    <h1 class="heading">
+      Download your desired video format from the following options.
+    </h1>
+
+    <div class="downloads">
+      <div class="detail detail_640x360">
+        <p>640x360</p>
+        <button class="download">Download</button>
+      </div>
+      <div class="detail detail_854x480">
+        <p>854x480</p>
+        <button class="download">Download</button>
+      </div>
+      <div class="detail detail_1280x720">
+        <p>1280x720</p>
+        <button class="download">Download</button>
+      </div>
+      <div class="detail detail_1920x1080">
+        <p>1920x1080</p>
+        <button class="download">Download</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const url = `<%= url %>`;
+    let obj;
+
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        initialise(data.results);
+      });
+
+    const btn0 = document.querySelector(".detail_640x360 button");
+    const btn1 = document.querySelector(".detail_854x480 button");
+    const btn2 = document.querySelector(".detail_1280x720 button");
+    const btn3 = document.querySelector(".detail_1920x1080 button");
+    const initialise = (data) => {
+      btn0.addEventListener("click", () => {
+        window.open(data["640x360"]);
+      });
+
+      btn1.addEventListener("click", () => {
+        window.open(data["854x480"]);
+      });
+
+      btn2.addEventListener("click", () => {
+        window.open(data["1280x720"]);
+      });
+
+      btn3.addEventListener("click", () => {
+        window.open(data["1920x1080"]);
+      });
+    };
+  </script>
+</html>

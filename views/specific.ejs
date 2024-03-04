@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Info | Aniline</title>
+    <link rel="stylesheet" href="/init.css" />
+    <link rel="stylesheet" href="/specific.css" />
+    <link rel="stylesheet" href="/media_queries/specific.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" id="top">
+        <div class="navbar-brand" onclick="window.location.href = '/'">
+          <img
+            width="48"
+            height="48"
+            src="https://img.icons8.com/fluency/48/000000/a.png"
+            alt="a"
+          />
+          <h1>Aniline</h1>
+        </div>
+        <div class="navbar-right">
+          <a href="/#about_">About</a>
+          <button class="binge">Github</button>
+        </div>
+      </nav>
+    </header>
+    <div class="info"></div>
+
+    <div class="episodes"></div>
+
+    <div class="footer" style="display: none;">
+      <p>Made by Shiv 👋</p>
+      <p onclick="window.location.href = '#top'"">Back to top &uarr;</p>
+    </div>
+  </body>
+  <script src="/js/specific.js"></script>
+  <script>
+    const url = `<%= url %>`;
+    let obj;
+
+    // TODO: fetch data from the url and dynamically create components.
+
+    const showFooter = () => {
+      document.querySelector('.footer').style.display = "flex";
+    }
+
+    fetch(url)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        initialise(data.results, showFooter);
+      });
+
+    function initialise(data, callback) {
+      var image = document.createElement("div");
+      image.classList.add("image");
+      var img = document.createElement("img");
+      img.src = data.image;
+      image.appendChild(img);
+      var details = document.createElement("div");
+      details.classList.add("details");
+      var name = document.createElement("div");
+      var genre = document.createElement("div");
+      var released = document.createElement("div");
+      var status = document.createElement("div");
+
+      var name_ = document.createElement("h1");
+      var genre_ = document.createElement("p");
+      var released_ = document.createElement("p");
+      var status_ = document.createElement("p");
+
+      name_.innerText = data.name;
+      genre_.innerText = "Genre: " + data.genre;
+      released_.innerText = "Released on: " + data.released;
+      status_.innerText = "Status: " + data.status;
+
+      name.appendChild(name_);
+      genre.appendChild(genre_);
+      status.appendChild(status_);
+      released.appendChild(released_);
+
+      genre.classList.add("genre");
+      released.classList.add("released");
+      status.classList.add("status");
+
+      details.appendChild(name);
+      details.appendChild(genre);
+      details.appendChild(released);
+      details.appendChild(status);
+
+      const expand = document.createElement("details");
+      const summary = document.createElement("summary");
+      const expand_p = document.createElement("p");
+
+      expand_p.innerText = data.plot_summary;
+      summary.innerText = "Plot";
+
+      expand.appendChild(summary);
+      expand.appendChild(expand_p);
+
+      details.appendChild(expand);
+
+      document.querySelector(".info").appendChild(image);
+      document.querySelector(".info").appendChild(details);
+
+      for (let i = 0; i < data.episodes.length; ++i) {
+        var button = document.createElement("button");
+        button.innerText = `Episode ${i + 1}`;
+        button.addEventListener("click", () => {
+          window.location.href = `/download/${data.episodes[i][1]}`;
+        });
+        document.querySelector(".episodes").appendChild(button);
+      }
+
+      callback();
+    }
+  </script>
+</html>

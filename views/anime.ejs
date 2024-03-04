@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Results | Aniline</title>
+    <link rel="stylesheet" href="/init.css" />
+    <link rel="stylesheet" href="/anime.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar" id="top">
+        <div class="navbar-brand" onclick="window.location.href = '/'">
+          <img
+            width="48"
+            height="48"
+            src="https://img.icons8.com/fluency/48/000000/a.png"
+            alt="a"
+          />
+          <h1>Aniline</h1>
+        </div>
+        <div class="navbar-right">
+          <!-- <a href="http://localhost:3000/#about_">About</a> -->
+          <button class="binge">Github</button>
+        </div>
+      </nav>
+    </header>
+    <div class="results">
+      <h1>Showing results for "<%= og_query %>"</h1>
+      <div class="cards"></div>
+    </div>
+    <div class="footer">
+      <p>Made by Shiv 👋</p>
+      <p onclick="window.location.href = '#top'"">Back to top &uarr;</p>
+    </div>
+  </body>
+  <script src="/js/anime.js"></script>
+  <script>
+    let data = JSON.parse(`<%- JSON.stringify(data) %>`);
+    sessionStorage.setItem("obj", JSON.stringify(data));
+    populate();
+  </script>
+</html>

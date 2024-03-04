@@ -1,0 +1,119 @@
+.info {
+  margin-top: 80px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  /* gap: 90px; */
+}
+
+.image img {
+  width: 250px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details {
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.genre {
+  margin-top: 40px;
+}
+
+.released {
+  margin-top: 10px;
+}
+
+.status {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.info h1 {
+  color: white;
+}
+
+.info p {
+  color: #ada9a4;
+}
+
+.info details {
+  margin-top: 10px;
+}
+
+.episodes {
+  margin-top: 200px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 10px;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+}
+
+.episodes button {
+  width: 130px;
+  height: 40px;
+  padding: 7px;
+  background: #ac4ad5;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s all ease;
+}
+
+.episodes button:hover {
+  opacity: 0.5;
+}
+
+details {
+  width: fit-content;
+  margin: auto;
+}
+
+details > summary {
+  padding: 4px;
+  width: 200px;
+  background-color: #eeeeee;
+  border: none;
+  box-shadow: 1px 1px 2px #bbbbbb;
+  cursor: pointer;
+}
+
+details > p {
+  background-color: #eeeeee;
+  padding: 4px;
+  margin: 0;
+  box-shadow: 1px 1px 2px #bbbbbb;
+}
+
+.footer {
+  margin-top: 160px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px 60px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.footer p {
+  color: white;
+}
+
+.footer p:last-child {
+  cursor: pointer;
+}
